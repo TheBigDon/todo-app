@@ -2,6 +2,7 @@
   <section class="todo-list">
     <h3>TODO LIST</h3>
     <div class="list">
+      <!-- TODO: посмотри как указываются динамические классы во vue(массивы и объекты) -->
       <div
         v-for="todo in todos"
         :class="`todo-item ${todo.done && 'done'}`"

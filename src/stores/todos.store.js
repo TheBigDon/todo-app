@@ -9,6 +9,7 @@ export const useTodoStore = defineStore("todoStore", () => {
 
   const todosInLocalStorage = localStorage.getItem("todos");
   if (todosInLocalStorage) {
+    //TODO: JSON.parse может упасть, т.к. локалсторадж может правиться снаружи, то там может быть что-то изенено и не пропарсится
     todos.value = JSON.parse(todosInLocalStorage)._value;
   }
 
