@@ -34,6 +34,7 @@ watch(name, (newVal) => {
 onMounted(() => {
   getName(name);
 });
+// TODO: нужно бы использовать scss во всех компонентах
 </script>
 
 <style scoped>
