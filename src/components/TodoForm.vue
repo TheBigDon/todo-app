@@ -78,19 +78,12 @@ h4 {
     box-shadow: $shadow;
     margin-bottom: 1.5rem;
   }
-}
-
-.create-todo {
   .options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
     margin-bottom: 1.5rem;
-  }
-}
 
-.create-todo {
-  .options {
     label {
       display: flex;
       flex-direction: column;
@@ -101,13 +94,7 @@ h4 {
       border-radius: 0.5rem;
       box-shadow: $shadow;
       cursor: pointer;
-    }
-  }
-}
 
-.create-todo {
-  .options {
-    label {
       div {
         color: $dark;
         font-size: 1.125rem;
@@ -115,9 +102,7 @@ h4 {
       }
     }
   }
-}
 
-.create-todo {
   input[type="submit"] {
     display: block;
     width: 100%;
@@ -129,11 +114,7 @@ h4 {
     box-shadow: $personal-glow;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-  }
-}
 
-.create-todo {
-  input[type="submit"] {
     &:hover {
       opacity: 0.75;
     }

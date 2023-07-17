@@ -77,14 +77,7 @@ input {
   border-radius: 50%;
   border: 2px solid $business;
   box-shadow: $business-glow;
-}
 
-.bubble.personal {
-  border-color: $personal;
-  box-shadow: $personal-glow;
-}
-
-.bubble {
   &::after {
     content: "";
     display: block;
@@ -99,6 +92,9 @@ input {
 }
 
 .bubble.personal {
+  border-color: $personal;
+  box-shadow: $personal-glow;
+
   &::after {
     background-color: $personal;
     box-shadow: $personal-glow;

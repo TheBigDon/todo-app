@@ -40,32 +40,20 @@ const props = defineProps({
     margin-right: 1rem;
     cursor: pointer;
   }
-}
 
-.todo-item {
   .todo-content {
     flex: 1 1 0%;
-  }
-}
 
-.todo-item {
-  .todo-content {
     input {
       color: $dark;
       font-size: 1.125rem;
     }
   }
-}
 
-.todo-item {
   .actions {
     display: flex;
     align-items: center;
-  }
-}
 
-.todo-item {
-  .actions {
     button {
       display: block;
       padding: 0.5rem;
@@ -73,22 +61,12 @@ const props = defineProps({
       color: #fff;
       cursor: pointer;
       transition: 0.2s ease-in-out;
-    }
-  }
-}
 
-.todo-item {
-  .actions {
-    button {
       &:hover {
         opacity: 0.75;
       }
     }
-  }
-}
 
-.todo-item {
-  .actions {
     .delete {
       background-color: $danger;
     }

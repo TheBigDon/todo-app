@@ -41,29 +41,14 @@ onMounted(() => {
 .greeting {
   .title {
     display: flex;
-  }
-}
+    color: $dark;
+    font-size: 1.5rem;
+    font-weight: 700;
 
-.greeting {
-  .title {
     input {
       margin-left: 0.5rem;
       flex: 1 1 0%;
       min-width: 0;
-    }
-  }
-}
-
-.greeting {
-  .title {
-    color: $dark;
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-}
-.greeting {
-  .title {
-    input {
       color: $dark;
       font-size: 1.5rem;
       font-weight: 700;

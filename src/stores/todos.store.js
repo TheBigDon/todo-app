@@ -9,7 +9,11 @@ export const useTodoStore = defineStore("todoStore", () => {
 
   const todosInLocalStorage = localStorage.getItem("todos");
   if (todosInLocalStorage) {
-    todos.value = JSON.parse(todosInLocalStorage)._value;
+    try {
+      todos.value = JSON.parse(todosInLocalStorage)._value;
+    } catch (err) {
+      alert("Ошибка! Данные были изменены!");
+    }
   }
 
   watch(

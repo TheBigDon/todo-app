@@ -4,7 +4,7 @@
     <div class="list">
       <div
         v-for="todo in todos"
-        :class="`todo-item ${todo.done && 'done'}`"
+        :class="['todo-item', { done: todo.done }]"
         :key="todo.createdAt"
       >
         <TodoItem :todo="todo" />
@@ -31,9 +31,7 @@ const props = defineProps({
   .list {
     margin: 1rem 0;
   }
-}
 
-.todo-list {
   .todo-item {
     display: flex;
     align-items: center;
