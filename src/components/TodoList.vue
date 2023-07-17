@@ -25,18 +25,23 @@ const props = defineProps({
 });
 </script>
 
-<style scoped>
-.todo-list .list {
-  margin: 1rem 0;
+<style scoped lang="scss">
+@import "../assets/variables";
+.todo-list {
+  .list {
+    margin: 1rem 0;
+  }
 }
 
-.todo-list .todo-item {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow);
-  margin-bottom: 1rem;
+.todo-list {
+  .todo-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: $shadow;
+    margin-bottom: 1rem;
+  }
 }
 </style>

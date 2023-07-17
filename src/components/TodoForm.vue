@@ -57,65 +57,86 @@ const addTodo = () => {
   inputCategory.value = null;
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
+@import "../assets/variables";
 h4 {
-  color: var(--grey);
+  color: $grey;
   font-size: 0.875rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.create-todo input[type="text"] {
-  display: block;
-  width: 100%;
-  font-size: 1.125rem;
-  padding: 1rem 1.5rem;
-  color: var(--dark);
-  background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow);
-  margin-bottom: 1.5rem;
+.create-todo {
+  input[type="text"] {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: $dark;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: $shadow;
+    margin-bottom: 1.5rem;
+  }
 }
 
-.create-todo .options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  margin-bottom: 1.5rem;
+.create-todo {
+  .options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
-.create-todo .options label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow);
-  cursor: pointer;
+.create-todo {
+  .options {
+    label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 0.5rem;
+      box-shadow: $shadow;
+      cursor: pointer;
+    }
+  }
 }
 
-.create-todo .options label div {
-  color: var(--dark);
-  font-size: 1.125rem;
-  margin-top: 1rem;
+.create-todo {
+  .options {
+    label {
+      div {
+        color: $dark;
+        font-size: 1.125rem;
+        margin-top: 1rem;
+      }
+    }
+  }
 }
 
-.create-todo input[type="submit"] {
-  display: block;
-  width: 100%;
-  font-size: 1.125rem;
-  padding: 1rem 1.5rem;
-  color: #fff;
-  background-color: var(--primary);
-  border-radius: 0.5rem;
-  box-shadow: var(--personal-glow);
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
+.create-todo {
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    background-color: $primary;
+    border-radius: 0.5rem;
+    box-shadow: $personal-glow;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
 }
 
-.create-todo input[type="submit"]:hover {
-  opacity: 0.75;
+.create-todo {
+  input[type="submit"] {
+    &:hover {
+      opacity: 0.75;
+    }
+  }
 }
 </style>

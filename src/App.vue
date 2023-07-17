@@ -36,21 +36,38 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-.greeting .title {
-  display: flex;
+<style scoped lang="scss">
+@import "./assets/_variables.scss";
+.greeting {
+  .title {
+    display: flex;
+  }
 }
 
-.greeting .title input {
-  margin-left: 0.5rem;
-  flex: 1 1 0%;
-  min-width: 0;
+.greeting {
+  .title {
+    input {
+      margin-left: 0.5rem;
+      flex: 1 1 0%;
+      min-width: 0;
+    }
+  }
 }
 
-.greeting .title,
-.greeting .title input {
-  color: var(--dark);
-  font-size: 1.5rem;
-  font-weight: 700;
+.greeting {
+  .title {
+    color: $dark;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+.greeting {
+  .title {
+    input {
+      color: $dark;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
 }
 </style>

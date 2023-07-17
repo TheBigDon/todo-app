@@ -32,51 +32,75 @@ const props = defineProps({
 });
 </script>
 
-<style scoped>
-.todo-item label {
-  display: block;
-  margin-right: 1rem;
-  cursor: pointer;
+<style scoped lang="scss">
+@import "../assets/variables";
+.todo-item {
+  label {
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
 }
 
-.todo-item .todo-content {
-  flex: 1 1 0%;
+.todo-item {
+  .todo-content {
+    flex: 1 1 0%;
+  }
 }
 
-.todo-item .todo-content input {
-  color: var(--dark);
-  font-size: 1.125rem;
+.todo-item {
+  .todo-content {
+    input {
+      color: $dark;
+      font-size: 1.125rem;
+    }
+  }
 }
 
-.todo-item .actions {
-  display: flex;
-  align-items: center;
+.todo-item {
+  .actions {
+    display: flex;
+    align-items: center;
+  }
 }
 
-.todo-item .actions button {
-  display: block;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
+.todo-item {
+  .actions {
+    button {
+      display: block;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+  }
 }
 
-.todo-item .actions button:hover {
-  opacity: 0.75;
+.todo-item {
+  .actions {
+    button {
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
 }
 
-.todo-item .actions .edit {
-  margin-right: 0.5rem;
-  background-color: var(--primary);
+.todo-item {
+  .actions {
+    .delete {
+      background-color: $danger;
+    }
+  }
 }
 
-.todo-item .actions .delete {
-  background-color: var(--danger);
-}
-
-.todo-item.done .todo-content input {
-  text-decoration: line-through;
-  color: var(--grey);
+.todo-item.done {
+  .todo-content {
+    input {
+      text-decoration: line-through;
+      color: $grey;
+    }
+  }
 }
 </style>

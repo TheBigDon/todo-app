@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref, watch } from "vue";
 
 // Services
-import { getTodo } from "../services/todos.service";
+import { setTodo } from "../services/todos.service";
 
 export const useTodoStore = defineStore("todoStore", () => {
   const todos = ref([]);
@@ -15,7 +15,7 @@ export const useTodoStore = defineStore("todoStore", () => {
   watch(
     () => todos,
     (state) => {
-      getTodo(state);
+      setTodo(state);
     },
     { deep: true }
   );

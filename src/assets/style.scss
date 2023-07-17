@@ -1,0 +1,106 @@
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat", sans-serif;
+}
+
+input {
+  &:not([type="radio"]) {
+    &:not([type="checkbox"]) {
+      appearance: none;
+      border: none;
+      outline: none;
+      background: none;
+      cursor: initial;
+    }
+  }
+}
+
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+}
+
+body {
+  background: $light;
+  color: $dark;
+}
+
+section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5em;
+}
+
+h3 {
+  color: $dark;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input {
+  &:checked {
+    ~ {
+      .bubble {
+        &::after {
+          width: 10px;
+          height: 10px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid $business;
+  box-shadow: $business-glow;
+}
+
+.bubble.personal {
+  border-color: $personal;
+  box-shadow: $personal-glow;
+}
+
+.bubble {
+  &::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: $business;
+    box-shadow: $business-glow;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.bubble.personal {
+  &::after {
+    background-color: $personal;
+    box-shadow: $personal-glow;
+  }
+}
