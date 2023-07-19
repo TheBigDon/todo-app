@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post("/", todoController.create);
 router.get("/", todoController.getAll);
+router.delete("/", todoController.delete);
 
 module.exports = router;

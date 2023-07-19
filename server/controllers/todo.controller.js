@@ -27,6 +27,20 @@ class TodoController {
       res.status(400).json({ message: err.message });
     }
   }
+
+  async delete(req, res) {
+    try {
+      const todo = await Todo.destroy({
+        where: {
+          id: req.body.id,
+        },
+      });
+
+      res.status(200).json(todo);
+    } catch (err) {
+      res.status(400).json({ message: err.message });
+    }
+  }
 }
 
 module.exports = new TodoController();
