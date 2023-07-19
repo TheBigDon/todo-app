@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.bulkInsert("Todos", [
+    return queryInterface.bulkInsert("todos", [
       {
         content: "throw out the trash",
         category: "personal",
@@ -43,6 +43,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete("Todos", null, {});
+    return queryInterface.bulkDelete("todos", null, {});
   },
 };
