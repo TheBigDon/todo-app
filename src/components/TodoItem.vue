@@ -11,7 +11,7 @@
     <input type="text" v-model="todo.content" />
   </div>
   <div class="actions">
-    <button class="delete" @click="removeTodo(todo.createdAt)">Delete</button>
+    <button class="delete" @click="removeTodo(todo.id)">Delete</button>
   </div>
 </template>
 
@@ -19,8 +19,8 @@
 import { useTodoStore } from "../stores/todos.store";
 const todoStore = useTodoStore();
 
-const removeTodo = (createdAt) => {
-  todoStore.remove(createdAt);
+const removeTodo = (todoId) => {
+  todoStore.removeTodo(todoId);
 };
 
 const props = defineProps({

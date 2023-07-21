@@ -51,7 +51,7 @@ const addTodo = () => {
     return;
   }
 
-  todoStore.add(inputContent.value, inputCategory.value);
+  todoStore.addTodo(inputContent.value, inputCategory.value);
 
   inputContent.value = "";
   inputCategory.value = null;

@@ -1,45 +1,32 @@
+import { ref } from "vue";
+
+// Stores
 import { defineStore } from "pinia";
-import { ref, watch } from "vue";
 
 // Services
-import { setTodo } from "../services/todos.service";
+import { createTodo, deleteTodo, getTodos } from "../services/todos.service";
 
 export const useTodoStore = defineStore("todoStore", () => {
   const todos = ref([]);
 
-  const todosInLocalStorage = localStorage.getItem("todos");
-  if (todosInLocalStorage) {
-    try {
-      todos.value = JSON.parse(todosInLocalStorage)._value;
-    } catch (err) {
-      alert("Ошибка! Данные были изменены!");
-    }
-  }
-
-  watch(
-    () => todos,
-    (state) => {
-      setTodo(state);
-    },
-    { deep: true }
-  );
-
-  const add = (inputContent, inputCategory) => {
-    todos.value.push({
-      content: inputContent,
-      category: inputCategory,
-      done: false,
-      createdAt: new Date().getTime(),
-    });
+  const loadTodos = async () => {
+    todos.value = await getTodos();
   };
 
-  const remove = (createdAt) => {
-    todos.value = todos.value.filter((todo) => todo.createdAt !== createdAt);
+  const addTodo = async (content, category) => {
+    const todo = await createTodo(content, category);
+    todos.value.push(todo);
+  };
+
+  const removeTodo = async (todoId) => {
+    const todo = await deleteTodo(todoId);
+    todos.value = todos.value.filter((item) => item.id !== todo.id);
   };
 
   return {
     todos,
-    add,
-    remove,
+    loadTodos,
+    addTodo,
+    removeTodo,
   };
 });
